@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+
+<main class="px-20 py-8 bg-zinc-50">
+    <div>
+        <h1 class="text-3xl font-semibold font-mono">what is the scope of var, let, and const?</h1>
+        <div class="text-center text-2xl font-bold italic mt-4">var</div>
+        <p class="text-xl font-serif mt-7 mb-5">
+            var is a global scope Variable declaration method, where the variable can be redeclare many time.it is also a fact that it is hoist to the top of their containing function or global scope. This means they are processed before the code is executed, but their assignment is not hoisted. here is a example given below:
+        </p>
+
+        <div class="bg-orange-50 p-2 rounded-md shadow-md">
+        <code>
+            function example() { <br>
+                var x = 10; <br>
+                if (true) {<br>
+                  var x = 20; // This reassigns the outer 'x'<br>
+                } <br>
+                console.log(x); // Outputs 20 <br>
+              }
+              
+        </code>
+    </div>
+
+
+        <div class="text-center text-2xl font-bold italic mt-4">let</div>
+
+       <p class="text-xl font-serif mt-7 mb-5">
+        Variables declared with let have block scope, which means they are only accessible within the block, in which they are defined.let variables are not hoisted to the top of the block like var do.(let) can not be redeclared in the same function.here is a example given below: 
+       </p>
+ 
+
+       <div class="bg-orange-50 p-2 rounded-md shadow-md">
+       <code>
+        function example() { <br>
+            let x = 10;<br>
+            if (true) {<br>
+              let x = 20; // This creates a new 'x' within the block scope <br>
+            }<br>
+            console.log(x); // Outputs 10 (the outer 'x' is not affected)<br>
+          }
+          
+       </code>
+    </div>
+    
+
+       <div class="text-center text-2xl font-bold italic mt-4">const</div>
+
+       <p class="text-xl font-serif mt-7 mb-5">
+        const variables are not hoisted to the top of the block, and they are only accessible after they are defined. the const variables are immutable and cannot be reassigned after they are initialized. here is a example given below: 
+       </p>
+ 
+         <div class="bg-orange-50 p-2 rounded-md shadow-md">
+
+       <code>
+        function example() { <br>
+            const x = 10;<br>
+            if (true) {<br>
+              const x = 20; // This creates a new 'x' within the block scope<br>
+            }<br>
+            console.log(x); // Outputs 10 (the outer 'x' is not affected)<br>
+          }
+          
+          
+       </code>
+
+    </div>
+
+    </div>
+
+<!-- second question -->
+    <div class="mt-10">
+        <h1 class="text-3xl font-semibold font-mono">Tell us the use cases of <span class="italic font-thin"> null</span> and <span class="italic font-thin"> undefined ?</span></h1>
+
+        <div class="text-center text-2xl font-bold italic mt-7"> null</div>
+
+        <p class="text-xl font-serif mt-7 mb-5">
+            It is common to use null when you want to clear or reset the value of an object or variable that previously held an object reference. Developers can explicitly assign the value null to a variable or property to indicate that it has no value or should be considered empty. here is a example given below: 
+        </p>
+
+
+        <div class="bg-orange-50 p-2 rounded-md shadow-md">
+           <code>
+            let y = null; // y has no value <br>
+
+            function clearValue(obj) {<br>
+              obj = null; // Explicitly set obj to null to indicate it's empty<br>
+            }<br>
+            
+            const myObject = { data: 'some data' };<br>
+            clearValue(myObject);<br>
+            console.log(myObject); // { data: 'some data' } - myObject is still defined, <br>but its value is null
+            
+
+           </code>
+        </div>
+
+        <div class="text-center text-2xl font-bold italic mt-7"> undefined </div>
+
+         <p class="text-xl font-serif mt-7 mb-5">
+            Variables that are declared but not initialized or properties that do not exist in an object have the value undefined.If a function is called with some arguments than declared parameters, the missing parameters will have the value undefined.Developers may use undefined to indicate that a variable or property is intentionally left empty or uninitialized. here is a example given below: 
+
+         </p>
+        <div class="bg-orange-50 p-2 rounded-md shadow-md">
+         <code>
+            let x; // x is undefined <br>
+     function example(param) {<br>
+     console.log(param); // If called with no argument, param is undefined<br>
+            }<br>
+     const obj = {};<br>
+   console.log(obj.property); // obj.property is undefined
+
+         </code>
+        </div>
+
+    </div>
+
+    <div class="mt-10 italic">
+        <h1 class="text-3xl font-semibold font-mono">What's an API and REST API?</h1>
+
+
+        <div class="bg-lime-50 p-2 mt-6 rounded-md shadow-lg">
+        <p class="text-xl font-serif mt-7 mb-5">
+            API is an application programming interface that contract between an information provider and an information user—establishing the content required from the consumer (the call) and the content required by the producer (the response). For example, the API design for a weather service could specify that the user supply a zip code and that the producer reply with a 2-part answer, the first being the high temperature, and the second being the low.  
+            In other words, if you want to interact with a computer or system to retrieve information or perform a function, an API helps you communicate what you want to that system so it can understand and fulfill the request. 
+           
+        </p>
+
+        <p class="text-xl font-serif mt-7 mb-5">
+            RESTFUL API is an interface that two computer systems use to exchange information securely over the internet. Most business applications have to communicate with other internal and third-party applications to perform various tasks. For example, to generate monthly payslips, your internal accounts system has to share data with your customer's banking system to automate invoicing and communicate with an internal time-sheet application. RESTful APIs support this information exchange because they follow secure, reliable, and efficient software communication standards.
+        </p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+</body>
+</html>
